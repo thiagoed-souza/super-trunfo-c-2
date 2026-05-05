@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <conio.h>
+#include <locale.h>
+
 
 int main() {
     // ==== Declaração de variáveis Carta 1 ==== 
@@ -109,7 +112,37 @@ int main() {
     }
 
     // Exibir o resultado da comparação, indicando qual carta é a vencedora e o valor do Super poder de cada carta
+    printf("\n--- RESULTADO DA COMPARAÇÃO ---\n");
+    printf("Atributo: População\n\n");
+
+    printf("Carta 1 - %s (%s): %lu\n", cidade1, estado1, populacao1);
+    printf("Carta 2 - %s (%s): %lu\n", cidade2, estado2, populacao2);
+
+    if (populacao1 > populacao2) {
+        printf("\nResultado: Carta 1 (%s) venceu!\n", cidade1);
+    } else if (populacao2 > populacao1) {    
+        printf("\nResultado: Carta 2 (%s) venceu!\n", cidade2);
+    } else {
+        printf("\nResultado: Empate nas populações!\n");
+    }
     
+    // === Comparação Final (Super Poder) ===
+
+    printf("\n--- Duelo de Super Poder ---\n");
+    printf("Valor Carta 1: %.2f\n", superPoder1);
+    printf("Valor Carta 2: %.2f\n", superPoder2);
+
+    if (superPoder1 > superPoder2) {
+        printf("Veredito: Carta 1 (%s) é a grande campeã!\n", cidade1);
+    } else if (superPoder2 > superPoder1) {
+        printf("Veredito: Carta 2 (%s) é a grande campeã!\n", cidade2);
+    } else {
+        printf("Veredito: Empate! Ambas as cartas são grandes campeãs!\n");
+    }
+
+
+    printf("\nPressione qualquer tecla para sair...");
+    getch();
 
     return 0;
 
